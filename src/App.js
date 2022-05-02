@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <h1>Welcome to bitbytes</h1>
+      <img src={logo} />
     </div>
   );
 }
