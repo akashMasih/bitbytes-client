@@ -6,7 +6,7 @@ import Header from './components/header/Header'
 import Nav from './components/nav/Nav';
 import Portfolio from './components/portfolio/Portfolio';
 import Testimonials from './components/testimonials/Testimonials';
-import './app.css'
+import './styles/app.css'
 
 function App() {
   return (
