@@ -1,7 +1,10 @@
 import React from 'react'
 import CTA from './CTA'
-import Me from '../../assets/me.png'
+import Me from '../../assets/akash.png'
 import Social from './Social'
+import { FiChevronsRight } from 'react-icons/fi'
+import './header.css'
+import Scroll from '../../assets/scrollDown.gif'
 
 function Header() {
     return (
@@ -11,11 +14,15 @@ function Header() {
                 <h2>Akash Masih</h2>
                 <h5>MEARN Stack Developer</h5>
                 <CTA />
+                <Social />
                 <div className="me">
                     <img src={Me} alt="me" />
                 </div>
-                <a href="#contact" className="scroll__down">scroll down</a>
-                <Social />
+                <a href="#contact" className="scroll__down">
+                    <img src={Scroll} alt="scroll" />
+                    {/* scroll down
+                    <FiChevronsRight className='icon' /> */}
+                </a>
             </div>
         </header>
     )
