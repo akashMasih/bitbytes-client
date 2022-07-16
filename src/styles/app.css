@@ -63,13 +63,20 @@ h1 {
 
 section {
     margin-top: 8rem;
-    height: 100vh;
 }
 
-section>h2,
-section>h5 {
+section h2 {
+    font-size: 3.2rem;
     text-align: center;
     color: var(--color-primary);
+    margin-bottom: 3rem;
+}
+
+section h5 {
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: .7;
 }
 
 .text-light {
@@ -129,13 +136,13 @@ img {
 
 /* ====================media query (small device) ========= */
 @media screen and (max-width:600px) {
-
     .container {
         width: var(--container-widt-sm);
     }
 
-    .section>h2 {
-        margin-bottom: 2rem;
+    section h2 {
+        margin-bottom: 1.6rem;
+        font-size: 1.7rem;
     }
 
 }
