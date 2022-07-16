@@ -10,11 +10,11 @@ function Nav() {
     const [activeNav, setActiveNAv] = useState('#')
     return (
         <nav>
-            <a href="#" onClick={() => setActiveNAv('#')} className={activeNav === '#' ? 'active' : ''}><AiOutlineHome /></a>
-            <a href="#about" onClick={() => setActiveNAv('about')} className={activeNav === 'about' ? 'active' : ''}><AiOutlineUser /></a>
-            <a href="#experience" onClick={() => setActiveNAv('experience')} className={activeNav === 'experience' ? 'active' : ''}><BiBook /></a>
-            <a href="#services" onClick={() => setActiveNAv('services')} className={activeNav === 'services' ? 'active' : ''}><RiServiceLine /></a>
-            <a href="#contact" onClick={() => setActiveNAv('contact')} className={activeNav === 'contact' ? 'active' : ''}><BiMessageSquareDetail /></a>
+            <a title='Home' href="#" onClick={() => setActiveNAv('#')} className={activeNav === '#' ? 'active' : ''}><AiOutlineHome /></a>
+            <a title='About Me' href="#about" onClick={() => setActiveNAv('about')} className={activeNav === 'about' ? 'active' : ''}><AiOutlineUser /></a>
+            <a title='My Experince' href="#experience" onClick={() => setActiveNAv('experience')} className={activeNav === 'experience' ? 'active' : ''}><BiBook /></a>
+            <a title='Services' href="#services" onClick={() => setActiveNAv('services')} className={activeNav === 'services' ? 'active' : ''}><RiServiceLine /></a>
+            <a title='Contact' href="#contact" onClick={() => setActiveNAv('contact')} className={activeNav === 'contact' ? 'active' : ''}><BiMessageSquareDetail /></a>
 
         </nav>
     )
