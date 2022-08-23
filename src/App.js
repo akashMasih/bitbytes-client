@@ -8,10 +8,34 @@ import Portfolio from './components/portfolio/Portfolio';
 import Services from './components/services/services';
 import Testimonials from './components/testimonials/Testimonials';
 import './styles/app.css'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from "react-router-dom";
+import { useEffect } from 'react';
+import ChatHome from './components/chat/ChatHome';
 
 function App() {
+
   return (
-    <div className="App">
+    <Router>
+      <Routes>
+        <Route path='/' element={<IndexPage />} />
+        <Route path='/chat' element={<ChatHome />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+const IndexPage = () => {
+  useEffect(() => {
+    document.title = document.title + " | Home"
+  })
+  return (
+    <div className='portfolioBody'>
       <Header />
       <Nav />
       <About />
@@ -21,9 +45,6 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer />
-
     </div>
-  );
+  )
 }
-
-export default App;

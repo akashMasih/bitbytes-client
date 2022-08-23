@@ -16,6 +16,9 @@
     --color-primary-variant: rgba(77, 181, 255, 0.4);
     --color-white: #fff;
     --color-light: rgba(255, 255, 255, 0.6);
+    --color-black: #282C35;
+    --color-gray: rgb(64, 64, 64);
+    --color-icon: #9A9DAA;
 
     --container-width-lg: 75%;
     --container-widt-md: 86%;
@@ -35,10 +38,14 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.7;
+    background: var(--color-bg);
+}
+
+.portfolioBody {
+    background-image: url(../assets/bg-texture.png) !important;
     background: var(--color-bg);
     color: var(--color-white);
-    line-height: 1.7;
-    background-image: url(../assets/bg-texture.png);
 }
 
 /* =====================General style============= */
@@ -120,6 +127,11 @@ img {
     display: block;
     width: 100%;
     object-fit: cover;
+}
+
+hr {
+    border: .04rem solid var(--color-icon);
+    opacity: .5;
 }
 
 
