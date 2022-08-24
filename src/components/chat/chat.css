@@ -267,7 +267,8 @@
     box-shadow: rgba(0, 0, 0, 0.02) 1px 1px 4px;
     font-size: .9rem;
     line-height: 1.4rem;
-    color: #fff
+    color: #fff;
+    max-width: 70%;
 }
 
 .sender__message-content {
@@ -278,6 +279,11 @@
 .sender__message-time {
     font-size: .7rem;
     color: var(--color-light)
+}
+
+.message__writing {
+    height: 40px;
+    ;
 }
 
 /* send box */

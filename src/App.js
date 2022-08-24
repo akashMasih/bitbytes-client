@@ -15,6 +15,8 @@ import {
 } from "react-router-dom";
 import { useEffect } from 'react';
 import ChatHome from './components/chat/ChatHome';
+import Login from './components/Login/Login';
+import CreateAccount from './components/create/CreateAccount';
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
       <Routes>
         <Route path='/' element={<IndexPage />} />
         <Route path='/chat' element={<ChatHome />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/create' element={<CreateAccount />} />
       </Routes>
     </Router>
   );

@@ -1,5 +1,7 @@
 import React from 'react'
 import ProfileImg from '../../../assets/avatar.avif'
+import Loading from '../../../assets/writing.gif'
+
 import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { RiMore2Fill } from 'react-icons/ri'
 import { ImAttachment } from 'react-icons/im'
@@ -130,20 +132,31 @@ function MessageSection() {
                     </div>
                     <img src={ProfileImg} alt="profile" className="sender__profile" />
                 </div>
-            </div>
-            <div className="send__box">
-                <div className="left">
-                    <ImAttachment className='attachment__icon' />
-                    <input type="text" className='message__send' placeholder='Write your message...' />
-                </div>
-                <div className="right">
-                    <GrEmoji className='attachment__icon' />
-                    <input type="submit" value="" className='submit__button' />
-                    <div className="send__icon">
-                        <FiSend />
+                <div className="receiver">
+                    <img src={ProfileImg} alt="profile" className="receiver__profile" />
+                    <div className="receiver__message">
+                        <div className="receiver__message-content">
+                            <img src={Loading} alt="a" className='message__writing' />
+                        </div>
                     </div>
                 </div>
+
             </div>
+            <form onSubmit={() => alert("submit")}>
+                <div className="send__box">
+                    <div className="left">
+                        <ImAttachment className='attachment__icon' />
+                        <input type="text" className='message__send' placeholder='Write your message...' />
+                    </div>
+                    <div className="right">
+                        <GrEmoji className='attachment__icon' />
+                        <input type="submit" value="" className='submit__button' />
+                        <div className="send__icon">
+                            <FiSend />
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     )
 }
