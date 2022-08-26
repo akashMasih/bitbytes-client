@@ -17,6 +17,7 @@ import { useEffect } from 'react';
 import ChatHome from './components/chat/ChatHome';
 import Login from './components/Login/Login';
 import CreateAccount from './components/create/CreateAccount';
+import SetProfile from './components/setProfile/SetProfile';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/chat' element={<ChatHome />} />
         <Route path='/login' element={<Login />} />
         <Route path='/create' element={<CreateAccount />} />
+        <Route path='/setProfile' element={<SetProfile />} />
       </Routes>
     </Router>
   );

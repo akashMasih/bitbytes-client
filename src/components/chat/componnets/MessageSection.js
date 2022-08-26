@@ -1,152 +1,45 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ProfileImg from '../../../assets/avatar.avif'
 import Loading from '../../../assets/writing.gif'
 
-import { AiOutlineInfoCircle } from 'react-icons/ai'
-import { RiMore2Fill } from 'react-icons/ri'
 import { ImAttachment } from 'react-icons/im'
 import { GrEmoji } from 'react-icons/gr'
 import { FiSend } from 'react-icons/fi'
-import moment from 'moment'
+import ChatHeader from './chatwindow/ChatHeader'
+import ReceivedChat from './chatwindow/ReceivedChat'
+import SendChat from './chatwindow/SendChat'
+import WelcomeImg from '../../../assets/welcome.svg'
 
-function MessageSection() {
+function MessageSection({ socket, user, sender }) {
+    const [message, setMessage] = useState("")
+    const messageSubmit = e => {
+        e.preventDefault()
+        socket.emit("private message", socket.id, message)
+
+    }
+
     return (
         <div className="message__section">
-            <div className="user__header">
-                <div className="user__box">
-                    <img src={ProfileImg} className="user__profile" />
-                    <div className="user__description">
-                        <h3>Hitanshi Gambhir</h3>
-                        <p>Online</p>
-                    </div>
-                </div>
-                <div className="user__function">
-                    <AiOutlineInfoCircle className='icon' />
-                    <RiMore2Fill className='icon' />
-                </div>
-            </div>
+            {sender && sender.user && sender.user.id ? <ChatHeader name={sender && sender.user && sender.user.name} status="Online" /> : ""}
             {/* messages */}
             <div className="messages">
-                <div className="receiver">
-                    <img src={ProfileImg} alt="profile" className="receiver__profile" />
-                    <div className="receiver__message">
-                        <div className="receiver__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit saepe maxime quod, harum itaque optio est vitae culpa deleniti rem illum aperiam? Dolorem, laborum. At assumenda fugiat porro sapiente corrupti!
-                        </div>
-                        <div className="receiver__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="receiver">
-                    <img src={ProfileImg} alt="profile" className="receiver__profile" />
-                    <div className="receiver__message">
-                        <div className="receiver__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit saepe maxime quod, harum itaque optio est vitae culpa deleniti rem illum aperiam? Dolorem, laborum. At assumenda fugiat porro sapiente corrupti!
-                        </div>
-                        <div className="receiver__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="receiver">
-                    <img src={ProfileImg} alt="profile" className="receiver__profile" />
-                    <div className="receiver__message">
-                        <div className="receiver__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit saepe maxime quod, harum itaque optio est vitae culpa deleniti rem illum aperiam? Dolorem, laborum. At assumenda fugiat porro sapiente corrupti!
-                        </div>
-                        <div className="receiver__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="sender">
-                    <div className="sender__message">
-                        <div className="sender__message-content">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime neque ducimus, cupiditate.
-                            adipisicing elit. Maxime neque ducimus, cupiditate.
-                        </div>
-                        <div className="sender__message-time">
-                            {moment().format('LT')}
-                        </div>
-                    </div>
-                    <img src={ProfileImg} alt="profile" className="sender__profile" />
-                </div>
-                <div className="receiver">
-                    <img src={ProfileImg} alt="profile" className="receiver__profile" />
-                    <div className="receiver__message">
-                        <div className="receiver__message-content">
-                            <img src={Loading} alt="a" className='message__writing' />
-                        </div>
-                    </div>
-                </div>
+                {
+                    sender && sender.user && sender.user.id ?
+                        <>
+                            <ReceivedChat />
+                            <SendChat />
+                        </>
+                        :
+                        <img src={WelcomeImg} alt="welcome" />
+                }
+
 
             </div>
-            <form onSubmit={() => alert("submit")}>
+            <form onSubmit={messageSubmit}>
                 <div className="send__box">
                     <div className="left">
                         <ImAttachment className='attachment__icon' />
-                        <input type="text" className='message__send' placeholder='Write your message...' />
+                        <input type="text" className='message__send' name="message" onChange={(e) => setMessage(e.target.value)} value={message} placeholder='Write your message...' />
                     </div>
                     <div className="right">
                         <GrEmoji className='attachment__icon' />

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
 
 * {
     padding: 0;
@@ -19,12 +20,16 @@
     --color-black: #282C35;
     --color-gray: rgb(64, 64, 64);
     --color-icon: #9A9DAA;
+    --color-dark: rgb(8, 5, 20);
 
     --container-width-lg: 75%;
     --container-widt-md: 86%;
     --container-widt-sm: 90%;
 
     --transition: all 600ms ease;
+
+    --font-family-josfin: 'Josefin Sans', sans-serif;
+    --font-faimly-josfin: 'Poppins', sans-serif;
 
 }
 
@@ -37,7 +42,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-faimly-josfin);
     line-height: 1.7;
     background: var(--color-bg);
 }

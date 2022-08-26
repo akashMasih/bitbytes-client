@@ -2,7 +2,7 @@ import React from 'react'
 import { IoNotificationsOutline } from 'react-icons/io5'
 import ProfileImg from '../../../assets/avatar.avif'
 
-function Header() {
+function Header({ user }) {
     return (
         <div className="chat__header">
             <div className="chat__header_title">
@@ -13,8 +13,8 @@ function Header() {
                     <IoNotificationsOutline className='notification' />
                 </div>
                 <div className="profile">
-                    <img className='profile__avatar' src={ProfileImg} alt="profile" />
-                    <div className="user-name">Akash Masih</div>
+                    <img className='profile__avatar' src={user.picture} alt="profile" />
+                    <div className="user-name">{user.fullName}</div>
                 </div>
             </div>
         </div>

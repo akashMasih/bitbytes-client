@@ -202,7 +202,7 @@
 .messages {
     padding: 20px 0;
     overflow: scroll;
-    height: 60vh;
+    min-height: 60vh;
 }
 
 

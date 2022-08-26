@@ -1,12 +1,12 @@
 import React from 'react'
 import ProfileImg from '../../../assets/avatar.avif'
 
-function Chat() {
+function Chat({ name }) {
     return (
         <div className="chat__box active__chat">
             <img src={ProfileImg} className="chat__profile" />
             <div className="chat__description">
-                <h3>Hitanshi Gambhir</h3>
+                <h3>{name}</h3>
                 <p>I will call you later</p>
             </div>
             <div className="chat__detail">
